@@ -434,6 +434,14 @@ def generate_one(llm, cfg: dict, history: list, niche: str | None, topic_title: 
     date = dt.date.today().isoformat()
     slug = slugify(meta.get("slug") or meta.get("title") or topic.get("title", "post"))
 
+    if cfg.get("covers", True):  # free branded cover image (Pillow) - post eke mulata
+        from covers import cover_html
+
+        cover = cover_html(meta.get("title", topic.get("title", "")), niche, slug)
+        md = md.replace(body, cover + "\n" + body, 1)
+        body = cover + "\n" + body
+        print(f"  Cover image: covers/{slug}.jpg")
+
     image = {"html": "", "local_file": None}
     if cfg.get("images", True):
         from images import featured_image

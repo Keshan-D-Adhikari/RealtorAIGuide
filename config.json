@@ -40,5 +40,6 @@
     "Edit the following text to make it more engaging, expressive, and natural. Improve sentence flow, pacing, and word choices. Add subtle warmth where appropriate without exaggerating emotions or changing the original meaning.",
     "Rewrite the following text using simple, clear, natural language. Replace difficult words, unnecessary jargon, and complicated sentences with easy-to-understand wording. Keep the original meaning and important information accurate."
   ],
-  "fact_check": true
+  "fact_check": true,
+  "covers": true
 }
