@@ -1,6 +1,6 @@
 {
   "blog_name": "RealtorAIGuide",
-  "author": "Malik",
+  "author": "Keshan",
   "ai_provider": "gemini",
   "gemini_model": "gemini-3.6-flash",
   "gemini_fallback_models": [
