@@ -5,6 +5,7 @@ name: Daily blog post
 on:
   schedule:
     - cron: "30 3 * * *" # 03:30 UTC = 09:00 Sri Lanka
+    - cron: "30 5 * * *" # 11:00 Sri Lanka - 9 eka fail unoth witharak aye try karanawa
   workflow_dispatch: # Actions tab eken "Run workflow" click karala manually run karanna
 
 permissions:
@@ -26,12 +27,23 @@ jobs:
           python-version: "3.11"
           cache: pip
 
+      - name: Skip retry if today's posts are already done
+        id: check
+        if: github.event.schedule == '30 5 * * *'
+        run: |
+          if git log --since="today 00:00" --format=%s | grep -q "Update post history"; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Install dependencies
+        if: steps.check.outputs.skip != 'true'
         run: pip install -r requirements.txt
 
       - name: Write and upload posts
+        if: steps.check.outputs.skip != 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }} # Gemini busy unoth backup (nathnam Gemini witharai)
           GOOGLE_TOKEN_JSON: ${{ secrets.GOOGLE_TOKEN_JSON }}
           BLOGGER_BLOG_ID: "2535354785789069017"
           BLOGGER_URL: "https://realtoraiguide.blogspot.com/"

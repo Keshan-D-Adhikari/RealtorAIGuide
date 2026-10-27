@@ -184,15 +184,54 @@ class GeminiLLM:
                 except (httpx.HTTPError, ConnectionError) as e:  # server eka connection eka drop kaloth
                     last_error = e
                     print(f"  {model} connection dropped, trying next model...", file=sys.stderr)
+            if self.groq and round_ == 0:  # Gemini okkoma busy nam inna nathuwa kelinma Groq ekata yanawa
+                break
             print("  All models busy, waiting 60s before retrying...", file=sys.stderr)
             time.sleep(60)
+        if self.groq:
+            print("  Gemini busy, writing with Groq instead...", file=sys.stderr)
+            return self.groq.ask(prompt, system=system)
         raise RuntimeError(f"Gemini unavailable right now ({getattr(last_error, 'code', '?')}). Try again later.")
+
+
+class GroqLLM:
+    """Groq free API (card ona na) - Gemini busy unoth backup eka."""
+
+    URL = "https://api.groq.com/openai/v1/chat/completions"
+
+    def __init__(self, cfg: dict):
+        self.key = os.environ["GROQ_API_KEY"]
+        self.models = cfg.get("groq_models", ["openai/gpt-oss-120b", "llama-3.3-70b-versatile"])
+
+    def ask(self, prompt: str, system: str | None = None, **_) -> str:
+        messages = ([{"role": "system", "content": system}] if system else []) + [{"role": "user", "content": prompt}]
+        last = None
+        for round_ in range(3):
+            for model in self.models:
+                try:
+                    r = httpx.post(
+                        self.URL,
+                        headers={"Authorization": f"Bearer {self.key}"},
+                        json={"model": model, "messages": messages, "max_tokens": 8000},
+                        timeout=180,
+                    )
+                except httpx.HTTPError as e:
+                    last = e
+                    continue
+                if r.status_code == 200:
+                    return r.json()["choices"][0]["message"]["content"]
+                last = f"{r.status_code} {r.text[:200]}"
+                print(f"  Groq {model} failed ({r.status_code}), trying next...", file=sys.stderr)
+            time.sleep(60)
+        raise RuntimeError(f"Groq unavailable right now ({last}). Try again later.")
 
 
 def make_llm(cfg: dict):
     if cfg.get("ai_provider", "gemini") == "claude":
         return ClaudeLLM(cfg)
-    return GeminiLLM(cfg)
+    llm = GeminiLLM(cfg)
+    llm.groq = GroqLLM(cfg) if os.environ.get("GROQ_API_KEY") else None
+    return llm
 
 
 def research_topic(llm, niche: str, history: list, cfg: dict) -> dict:
