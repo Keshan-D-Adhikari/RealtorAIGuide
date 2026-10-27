@@ -1,0 +1,34 @@
+{
+  "blog_name": "RealtorAIGuide",
+  "author": "Malik",
+  "ai_provider": "gemini",
+  "gemini_model": "gemini-3.6-flash",
+  "gemini_fallback_models": [
+    "gemini-3.5-flash",
+    "gemini-3.7-flash",
+    "gemini-3.8-flash",
+    "gemini-flash-latest",
+    "gemini-2.5-flash"
+  ],
+  "gemini_search": false,
+  "images": false,
+  "gemini_images": false,
+  "image_query_prefix": "real estate agent",
+  "tone": "friendly, practical, like a tech-savvy colleague helping a busy real estate agent",
+  "word_count": 1500,
+  "posts_per_run": 2,
+  "export_html": true,
+  "research_effort": "medium",
+  "writing_effort": "high",
+  "blogger_upload": true,
+  "blogger_mode": "draft",
+  "blogger_labels": [
+    "AI for Realtors"
+  ],
+  "niches": [
+    "AI tools for real estate agents (productivity and marketing tools only, no financial or legal advice)",
+    "ChatGPT and AI prompts for real estate listings, emails and social media",
+    "AI CRM, lead generation and chatbot tools for realtors",
+    "AI virtual staging and real estate photo editing tools"
+  ]
+}
