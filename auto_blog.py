@@ -225,7 +225,9 @@ Blog name: {cfg.get("blog_name", "My Blog")}. Author: {cfg.get("author", "Admin"
 Tone: {cfg.get("tone", "friendly, helpful, trustworthy")}.
 
 Follow Google's helpful-content guidelines: original insight, practical steps, no fluff, no keyword stuffing,
-no fabricated statistics. Only state figures that appear in the provided research facts; otherwise speak generally."""
+no fabricated statistics. Only state figures that appear in the provided research facts; otherwise speak generally.
+Do not quote specific prices, plan names, discounts or release dates for products; tell readers to check the
+vendor's website for current pricing. Only recommend well-established products you are confident still exist."""
     if cfg.get("editor_passes"):
         system += "\n\nWriting style guidelines (follow all of them while writing):\n" + "\n".join(
             f"- {p.replace('the following text', 'your text').replace('the following content', 'your content')}"
@@ -373,6 +375,14 @@ def generate_one(llm, cfg: dict, history: list, niche: str | None, topic_title: 
         md = md.replace(body, edited, 1)
         body = edited
 
+    check_report = []
+    if cfg.get("fact_check", True):
+        from fact_check import fact_check
+
+        print("  Fact-checking products against their official websites...")
+        md, check_report = fact_check(llm, md, body)
+        meta, body = parse_front_matter(md)
+
     date = dt.date.today().isoformat()
     slug = slugify(meta.get("slug") or meta.get("title") or topic.get("title", "post"))
 
@@ -397,6 +407,7 @@ def generate_one(llm, cfg: dict, history: list, niche: str | None, topic_title: 
         "title": meta.get("title", topic.get("title")),
         "file": md_path.name,
         "ai_image": image["local_file"],
+        "fact_check": [{k: r[k] for k in ("name", "url", "status", "verified")} for r in check_report],
     }
 
     if cfg.get("blogger_upload", False):

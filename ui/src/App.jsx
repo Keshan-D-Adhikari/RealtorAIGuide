@@ -168,6 +168,45 @@ function Preview({ file, onClose }) {
   );
 }
 
+function ApiKeys({ onSaved }) {
+  const [name, setName] = useState("GEMINI_API_KEY");
+  const [value, setValue] = useState("");
+  const [msg, setMsg] = useState("");
+  const save = async () => {
+    setMsg("");
+    try {
+      await api("/api/keys", { method: "POST", body: JSON.stringify({ name, value }) });
+      setValue("");
+      setMsg(`${name} saved ✓`);
+      onSaved();
+    } catch (e) {
+      setMsg(e.message);
+    }
+  };
+  return (
+    <section className="card">
+      <h2>API keys</h2>
+      <p className="muted small">Keys are saved only in the local .env file on this computer. Never paste them in chat.</p>
+      <div className="grid">
+        <label>
+          Key
+          <select value={name} onChange={(e) => setName(e.target.value)}>
+            <option value="GEMINI_API_KEY">Gemini (free)</option>
+            <option value="PEXELS_API_KEY">Pexels images</option>
+            <option value="ANTHROPIC_API_KEY">Claude</option>
+          </select>
+        </label>
+        <label>
+          New value
+          <input type="password" autoComplete="off" value={value} placeholder="Paste key here" onChange={(e) => setValue(e.target.value)} />
+        </label>
+      </div>
+      <button className="primary" disabled={!value} onClick={save}>Save key</button>
+      {msg && <span className="muted"> {msg}</span>}
+    </section>
+  );
+}
+
 function Settings({ config, onSaved }) {
   const [draft, setDraft] = useState(config);
   const [saved, setSaved] = useState(false);
@@ -239,6 +278,7 @@ export default function App() {
         <p className="error">Add GEMINI_API_KEY to the .env file (free key: aistudio.google.com), then restart server.py.</p>
       )}
       {(tab === "posts" || tab === "write") && <Posts posts={posts} onOpen={setOpen} onChange={refresh} />}
+      {tab === "settings" && <ApiKeys onSaved={refresh} />}
       {tab === "settings" && <Settings config={config} onSaved={() => api("/api/config").then(setConfig)} />}
       {open && <Preview file={open} onClose={() => setOpen(null)} />}
     </main>

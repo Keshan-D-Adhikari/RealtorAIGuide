@@ -50,6 +50,25 @@ def status():
     })
 
 
+ALLOWED_KEYS = {"GEMINI_API_KEY", "ANTHROPIC_API_KEY", "PEXELS_API_KEY"}
+
+
+@app.post("/api/keys")
+def save_key():
+    """Dashboard eken dena API key eka .env file ekata save karanawa. Key eka aye kawadawath return karanne na."""
+    data = request.get_json(force=True) or {}
+    name, value = data.get("name"), (data.get("value") or "").strip()
+    if name not in ALLOWED_KEYS or not value or any(c in value for c in "\r\n= "):
+        abort(400, "Invalid key")
+    env_path = BASE_DIR / ".env"
+    lines = env_path.read_text(encoding="utf-8").splitlines() if env_path.exists() else []
+    lines = [l for l in lines if not l.startswith(f"{name}=")]
+    lines.insert(0, f"{name}={value}")
+    env_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    os.environ[name] = value  # server restart karanna ona na
+    return jsonify({"saved": name})
+
+
 @app.get("/api/config")
 def get_config():
     return jsonify(read_json(CONFIG_PATH, {}))
