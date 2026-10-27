@@ -30,7 +30,13 @@ def get_service():
     creds = None
     token_env = os.environ.get("GOOGLE_TOKEN_JSON")  # GitHub Actions wage cloud eke token.json content eka secret ekak widihata
     if token_env:
-        creds = Credentials.from_authorized_user_info(json.loads(token_env), SCOPES)
+        try:
+            info = json.loads(token_env.strip().lstrip("﻿"))
+        except json.JSONDecodeError:
+            raise ValueError(
+                "GOOGLE_TOKEN_JSON secret is not valid JSON. Run copy_token.bat and paste it into the secret again."
+            ) from None
+        creds = Credentials.from_authorized_user_info(info, SCOPES)
         if not creds.valid:
             creds.refresh(Request())
         return build("blogger", "v3", credentials=creds)

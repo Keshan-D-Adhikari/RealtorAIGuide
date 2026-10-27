@@ -201,7 +201,7 @@ class GroqLLM:
 
     def __init__(self, cfg: dict):
         self.key = os.environ["GROQ_API_KEY"]
-        self.models = cfg.get("groq_models", ["openai/gpt-oss-120b", "llama-3.3-70b-versatile"])
+        self.models = cfg.get("groq_models", ["openai/gpt-oss-120b", "openai/gpt-oss-20b", "qwen/qwen3-32b"])
 
     def ask(self, prompt: str, system: str | None = None, **_) -> str:
         messages = ([{"role": "system", "content": system}] if system else []) + [{"role": "user", "content": prompt}]
