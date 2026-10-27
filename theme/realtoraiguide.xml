@@ -118,6 +118,10 @@ main{min-width:0}
 .search-input input{width:100%;box-sizing:border-box}
 .search-action{flex:none}
 .sidebar .PopularPosts:not(:has(.post)){display:none}
+.is-multiple .post-body>*:nth-child(n+3){display:none}
+.is-multiple .post-body>p:nth-child(2){display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin:0}
+.is-multiple .post-body>p:first-child{margin:0 0 14px}
+.is-multiple .post-body>p:first-child img{display:block}
 .ContactForm input[type=text],.ContactForm textarea,.contact-form-name,.contact-form-email,.contact-form-email-message{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;font:inherit;font-size:15px;margin:4px 0 10px;max-width:100%}
 .contact-form-button-submit{background:var(--teal);color:#fff;border:0;border-radius:10px;padding:10px 18px;font-weight:600;cursor:pointer;height:auto}
 .about-box p{margin:0;color:#4b5563;font-size:15px}
