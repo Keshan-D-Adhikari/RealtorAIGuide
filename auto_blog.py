@@ -226,6 +226,11 @@ Tone: {cfg.get("tone", "friendly, helpful, trustworthy")}.
 
 Follow Google's helpful-content guidelines: original insight, practical steps, no fluff, no keyword stuffing,
 no fabricated statistics. Only state figures that appear in the provided research facts; otherwise speak generally."""
+    if cfg.get("editor_passes"):
+        system += "\n\nWriting style guidelines (follow all of them while writing):\n" + "\n".join(
+            f"- {p.replace('the following text', 'your text').replace('the following content', 'your content')}"
+            for p in cfg["editor_passes"]
+        )
 
     words = cfg.get("word_count", 1500)
     prompt = f"""Write a complete blog post based on this research brief:
