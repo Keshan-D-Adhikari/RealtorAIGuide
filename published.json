@@ -25,5 +25,69 @@
     "ai_image": null,
     "blogger_id": "8475741465483383636",
     "blogger_url": "https://realtoraiguide.blogspot.com/"
+  },
+  {
+    "date": "2026-10-27",
+    "niche": "AI virtual staging and real estate photo editing tools",
+    "title": "Virtual Staging AI vs BoxBrownie: Which Is Best for Agents?",
+    "file": "2026-10-27-virtual-staging-ai-vs-boxbrownie.md",
+    "ai_image": null,
+    "fact_check": [
+      {
+        "name": "Virtual Staging AI",
+        "url": "https://www.virtualstagingai.app",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "BoxBrownie",
+        "url": "https://www.boxbrownie.com",
+        "status": 200,
+        "verified": true
+      }
+    ],
+    "blogger_id": "7138115623921894176",
+    "blogger_url": "https://realtoraiguide.blogspot.com/"
+  },
+  {
+    "date": "2026-10-27",
+    "niche": "AI virtual staging and real estate photo editing tools",
+    "title": "Best AI Virtual Decluttering Tools for Real Estate Photos",
+    "file": "2026-10-27-best-ai-virtual-decluttering-tools-real-estate.md",
+    "ai_image": null,
+    "fact_check": [
+      {
+        "name": "AI HomeDesign",
+        "url": "https://aihomedesign.com",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "BoxBrownie",
+        "url": "https://www.boxbrownie.com",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "Virtual Staging AI",
+        "url": "https://www.virtualstagingai.app",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "Apply Design",
+        "url": "https://www.applydesign.io",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "Photoroom",
+        "url": "https://www.photoroom.com",
+        "status": 200,
+        "verified": true
+      }
+    ],
+    "blogger_id": "946777957555194260",
+    "blogger_url": "https://realtoraiguide.blogspot.com/"
   }
 ]
