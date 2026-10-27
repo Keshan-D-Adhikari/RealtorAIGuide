@@ -35,6 +35,7 @@ jobs:
           GOOGLE_TOKEN_JSON: ${{ secrets.GOOGLE_TOKEN_JSON }}
           BLOGGER_BLOG_ID: "2535354785789069017"
           BLOGGER_URL: "https://realtoraiguide.blogspot.com/"
+          PYTHONUNBUFFERED: "1" # log eka live penna
         run: python -W ignore auto_blog.py
 
       - name: Save post history

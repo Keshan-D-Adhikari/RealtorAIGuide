@@ -122,7 +122,11 @@ class GeminiLLM:
         from google import genai
 
         self.genai = genai
-        self.client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
+        # Request ekak hira unoth (response ekak nathuwa) paya ganan inne nathuwa 3 min walin ilaga model ekata yanawa
+        self.client = genai.Client(
+            api_key=os.environ["GEMINI_API_KEY"],
+            http_options=genai.types.HttpOptions(timeout=180_000),
+        )
         first = cfg.get("gemini_model") or self.pick_model()
         # Ekak busy (503) hari quota iwara (429) unoth anith free models walata maru wenawa
         self.models = [first] + [m for m in cfg.get("gemini_fallback_models", []) if m != first]
