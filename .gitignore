@@ -14,7 +14,6 @@ ui/dist/
 
 # Generated content and logs
 posts/
-published.json
 blog_log.txt
 
 # Local tooling

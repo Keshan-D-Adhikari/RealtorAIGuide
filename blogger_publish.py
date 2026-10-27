@@ -7,6 +7,7 @@ Test karanna:
     python blogger_publish.py          # login wela blog eka hoyagannawa
 """
 
+import json
 import os
 import sys
 from pathlib import Path
@@ -27,6 +28,12 @@ load_dotenv(BASE_DIR / ".env")
 
 def get_service():
     creds = None
+    token_env = os.environ.get("GOOGLE_TOKEN_JSON")  # GitHub Actions wage cloud eke token.json content eka secret ekak widihata
+    if token_env:
+        creds = Credentials.from_authorized_user_info(json.loads(token_env), SCOPES)
+        if not creds.valid:
+            creds.refresh(Request())
+        return build("blogger", "v3", credentials=creds)
     if TOKEN_PATH.exists():
         creds = Credentials.from_authorized_user_file(str(TOKEN_PATH), SCOPES)
     if not creds or not creds.valid:

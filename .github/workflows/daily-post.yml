@@ -1,0 +1,47 @@
+# Hama dawasema ude 9ta (Sri Lanka time) GitHub cloud eke post liyala Blogger ekata draft widihata upload karanawa.
+# Computer eka on wela thiyenna ona na.
+name: Daily blog post
+
+on:
+  schedule:
+    - cron: "30 3 * * *" # 03:30 UTC = 09:00 Sri Lanka
+  workflow_dispatch: # Actions tab eken "Run workflow" click karala manually run karanna
+
+permissions:
+  contents: write # published.json (kalin liyapu titles) aye repo ekata save karanna
+
+concurrency:
+  group: daily-post
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Write and upload posts
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GOOGLE_TOKEN_JSON: ${{ secrets.GOOGLE_TOKEN_JSON }}
+          BLOGGER_BLOG_ID: "2535354785789069017"
+          BLOGGER_URL: "https://realtoraiguide.blogspot.com/"
+        run: python -W ignore auto_blog.py
+
+      - name: Save post history
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f published.json || true
+          git diff --cached --quiet || git commit -m "Update post history [skip ci]"
+          git push || true
