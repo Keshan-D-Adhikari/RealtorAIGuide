@@ -30,5 +30,15 @@
     "ChatGPT and AI prompts for real estate listings, emails and social media",
     "AI CRM, lead generation and chatbot tools for realtors",
     "AI virtual staging and real estate photo editing tools"
+  ],
+  "editor_enabled": true,
+  "editor_mode": "combined",
+  "editor_passes": [
+    "Act as a professional editor. Rewrite the following text to make it natural, clear, and fluent. Remove robotic wording, repetitive phrases, and awkward sentences while preserving the original meaning and key ideas. Make it polished and easy to read without exaggerating or adding new information.",
+    "Rewrite the following text in a natural, friendly, and relatable tone. Improve the wording, sentence flow, and readability so it feels like a real person explaining something clearly. Keep the original meaning, information, and purpose unchanged.",
+    "Rewrite the following text to improve its natural flow and writing quality. Vary sentence structures, remove unnecessary repetition and generic expressions, and use clear, natural wording. Preserve the original meaning and do not add unsupported information.",
+    "Rewrite the following content in a friendly, conversational style, as if a knowledgeable person is explaining it directly to someone else. Use simple, natural language, improve the flow, and keep it professional and easy to understand. Preserve all important details and the original message.",
+    "Edit the following text to make it more engaging, expressive, and natural. Improve sentence flow, pacing, and word choices. Add subtle warmth where appropriate without exaggerating emotions or changing the original meaning.",
+    "Rewrite the following text using simple, clear, natural language. Replace difficult words, unnecessary jargon, and complicated sentences with easy-to-understand wording. Keep the original meaning and important information accurate."
   ]
 }

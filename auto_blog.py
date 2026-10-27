@@ -255,6 +255,38 @@ author: "{cfg.get("author", "Admin")}"
     return md
 
 
+EDIT_RULES = """Formatting rules (must follow):
+- Return ONLY the edited Markdown body. No preface, no notes, no code fences.
+- Keep every heading (## / ###), list, table, FAQ question and link (same URLs) in place.
+- Do not add facts, statistics, product names, prices or links that are not already in the text.
+- Keep it in US English."""
+
+
+def edit_post(llm, body: str, cfg: dict) -> str:
+    """Oya dunna editor instructions use karala post body eka natural, human widihata rewrite karanawa."""
+    passes = cfg.get("editor_passes") or []
+    if not cfg.get("editor_enabled", True) or not passes:
+        return body
+
+    if cfg.get("editor_mode", "combined") == "sequential":
+        steps = passes  # instruction ekin ekata wenama call (free tier eke rate limit ikmanata iwara wenna puluwan)
+    else:
+        steps = ["Apply ALL of these editing instructions together in one careful rewrite:\n\n"
+                 + "\n\n".join(f"{i}. {p}" for i, p in enumerate(passes, 1))]
+
+    for i, instruction in enumerate(steps, 1):
+        print(f"  Editing pass {i}/{len(steps)}...")
+        edited = llm.ask(f"{instruction}\n\n{EDIT_RULES}\n\nText:\n\n{body}",
+                         effort=cfg.get("writing_effort", "high")).strip()
+        edited = re.sub(r"^```(?:markdown)?\s*|\s*```$", "", edited)
+        # Edit eka headings nathi kaloth hari godak keti kaloth original eka thiyagannawa
+        if edited.count("## ") < body.count("## ") * 0.8 or len(edited) < len(body) * 0.6:
+            print("  ! Edit changed the structure too much, keeping previous version", file=sys.stderr)
+            continue
+        body = edited
+    return body
+
+
 def parse_front_matter(md: str) -> tuple[dict, str]:
     m = re.match(r"^---\s*\n(.*?)\n---\s*\n(.*)$", md, re.S)
     if not m:
@@ -331,6 +363,10 @@ def generate_one(llm, cfg: dict, history: list, niche: str | None, topic_title: 
     print("  Writing post...")
     md = write_post(llm, topic, cfg)
     meta, body = parse_front_matter(md)
+    edited = edit_post(llm, body, cfg)
+    if edited != body:
+        md = md.replace(body, edited, 1)
+        body = edited
 
     date = dt.date.today().isoformat()
     slug = slugify(meta.get("slug") or meta.get("title") or topic.get("title", "post"))
