@@ -168,6 +168,11 @@ class GeminiLLM:
                         print("  Google Search grounding not available on free key, continuing without it.", file=sys.stderr)
                         tools = None
                         self.search_allowed = False
+                    elif e.code == 404:  # model eka ain karala (retired) - eka list eken ain karala ilaga ekata yanawa
+                        print(f"  {model} no longer available (404), skipping it.", file=sys.stderr)
+                        self.models.remove(model)
+                        if not self.models:
+                            raise RuntimeError(f"Gemini API error {e.code}: {e.message}") from e
                     elif e.code in (429, 500, 503):
                         print(f"  {model} busy/limited ({e.code}), trying next model...", file=sys.stderr)
                     else:
