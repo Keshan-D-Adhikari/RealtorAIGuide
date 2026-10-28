@@ -89,5 +89,129 @@
     ],
     "blogger_id": "946777957555194260",
     "blogger_url": "https://realtoraiguide.blogspot.com/"
+  },
+  {
+    "date": "2026-10-28",
+    "niche": "AI tools for real estate agents (productivity and marketing tools only, no financial or legal advice)",
+    "title": "Best AI Tools to Turn Listing Photos into Video Tours",
+    "file": "2026-10-28-best-ai-tools-photo-to-video-real-estate-tours.md",
+    "ai_image": null,
+    "fact_check": [
+      {
+        "name": "Runway",
+        "url": "https://runwayml.com",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "InVideo AI",
+        "url": "https://invideo.io",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "CapCut",
+        "url": "https://www.capcut.com",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "Luma Dream Machine",
+        "url": "https://lumalabs.ai",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "Canva",
+        "url": "https://www.canva.com",
+        "status": 403,
+        "verified": true
+      }
+    ],
+    "blogger_id": "7155835862199867072",
+    "blogger_url": "https://realtoraiguide.blogspot.com/"
+  },
+  {
+    "date": "2026-10-28",
+    "niche": "AI CRM, lead generation and chatbot tools for realtors",
+    "title": "How to Automate Zillow Lead Follow-Up with AI Chatbots",
+    "file": "2026-10-28-automate-zillow-lead-follow-up-ai.md",
+    "ai_image": null,
+    "fact_check": [
+      {
+        "name": "Zillow Premier Agent",
+        "url": "https://premieragent.zillow.com",
+        "status": 403,
+        "verified": true
+      },
+      {
+        "name": "Follow Up Boss",
+        "url": "https://www.followupboss.com",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "kvCORE",
+        "url": "https://www.kvcore.com",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "Lofty",
+        "url": "https://lofty.com",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "Structurely",
+        "url": "https://www.structurely.com",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "Ylopo RAI",
+        "url": "https://www.ylopo.com",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "Zapier",
+        "url": "https://www.zapier.com",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "Make",
+        "url": "https://www.make.com",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "Google Calendar",
+        "url": "https://calendar.google.com",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "Outlook",
+        "url": "https://outlook.live.com",
+        "status": 417,
+        "verified": false
+      },
+      {
+        "name": "Calendly",
+        "url": "https://calendly.com",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "RealtorAIGuide",
+        "url": "https://realtoraiguide.com",
+        "status": 200,
+        "verified": true
+      }
+    ],
+    "blogger_id": "5794140241996379085",
+    "blogger_url": "https://realtoraiguide.blogspot.com/"
   }
 ]
