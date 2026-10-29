@@ -213,5 +213,111 @@
     ],
     "blogger_id": "5794140241996379085",
     "blogger_url": "https://realtoraiguide.blogspot.com/"
+  },
+  {
+    "date": "2026-10-29",
+    "niche": "AI virtual staging and real estate photo editing tools",
+    "title": "5 Best AI Day-to-Dusk Tools for Real Estate Photos",
+    "file": "2026-10-29-best-ai-day-to-dusk-real-estate-photo-editing-tools.md",
+    "ai_image": null,
+    "fact_check": [
+      {
+        "name": "AutoEnhance.ai",
+        "url": "https://www.autoenhance.ai",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "BoxBrownie",
+        "url": "https://www.boxbrownie.com",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "Luminar Neo",
+        "url": "https://skylum.com/luminar-neo",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "Skylum",
+        "url": "https://skylum.com",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "PhotoUp",
+        "url": "https://www.photoup.net",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "Adobe Photoshop",
+        "url": "https://www.adobe.com/products/photoshop.html",
+        "status": 403,
+        "verified": true
+      },
+      {
+        "name": "Adobe Firefly",
+        "url": "https://firefly.adobe.com",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "Adobe",
+        "url": "https://www.adobe.com",
+        "status": 403,
+        "verified": true
+      }
+    ],
+    "blogger_id": "2041773929595744381",
+    "blogger_url": "https://realtoraiguide.blogspot.com/"
+  },
+  {
+    "date": "2026-10-29",
+    "niche": "AI tools for real estate agents (productivity and marketing tools only, no financial or legal advice)",
+    "title": "5 Best AI Tools to Repurpose Listings into Social Media Posts",
+    "file": "2026-10-29-best-ai-tools-repurpose-real-estate-listings-social-media.md",
+    "ai_image": null,
+    "fact_check": [
+      {
+        "name": "ChatGPT",
+        "url": "https://chatgpt.com",
+        "status": 403,
+        "verified": true
+      },
+      {
+        "name": "Claude",
+        "url": "https://claude.ai",
+        "status": 403,
+        "verified": true
+      },
+      {
+        "name": "Canva Magic Studio",
+        "url": "https://www.canva.com",
+        "status": 403,
+        "verified": true
+      },
+      {
+        "name": "Copy.ai",
+        "url": "https://www.copy.ai",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "Jasper AI",
+        "url": "https://www.jasper.ai",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "Lately.ai",
+        "url": "https://www.lately.ai",
+        "status": 200,
+        "verified": true
+      }
+    ],
+    "blogger_id": "3510871091564697662",
+    "blogger_url": "https://realtoraiguide.blogspot.com/"
   }
 ]
