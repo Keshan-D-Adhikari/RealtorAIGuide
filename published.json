@@ -319,5 +319,87 @@
     ],
     "blogger_id": "3510871091564697662",
     "blogger_url": "https://realtoraiguide.blogspot.com/"
+  },
+  {
+    "date": "2026-10-30",
+    "niche": "AI CRM, lead generation and chatbot tools for realtors",
+    "title": "Best AI CRMs for Solo Real Estate Agents",
+    "file": "2026-10-30-best-ai-crm-for-solo-real-estate-agents.md",
+    "ai_image": null,
+    "fact_check": [
+      {
+        "name": "Lofty",
+        "url": "https://lofty.com",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "Chime",
+        "url": "https://chime.me",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "Follow Up Boss",
+        "url": "https://www.followupboss.com",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "Wise Agent",
+        "url": "https://wiseagent.com",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "LionDesk",
+        "url": "https://www.liondesk.com",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "Real Geeks",
+        "url": "https://www.realgeeks.com",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "Sierra Interactive",
+        "url": "https://www.sierrainteractive.com",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "Ylopo",
+        "url": "https://www.ylopo.com",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "Zillow",
+        "url": "https://www.zillow.com",
+        "status": 403,
+        "verified": true
+      }
+    ],
+    "blogger_id": "804031553770712306",
+    "blogger_url": "https://realtoraiguide.blogspot.com/"
+  },
+  {
+    "date": "2026-10-30",
+    "niche": "ChatGPT and AI prompts for real estate listings, emails and social media",
+    "title": "ChatGPT Prompts for Expired Listing Email Sequences",
+    "file": "2026-10-30-chatgpt-prompts-expired-listing-emails.md",
+    "ai_image": null,
+    "fact_check": [
+      {
+        "name": "ChatGPT",
+        "url": "https://chatgpt.com",
+        "status": 403,
+        "verified": true
+      }
+    ],
+    "blogger_id": "5537834802620862837",
+    "blogger_url": "https://realtoraiguide.blogspot.com/"
   }
 ]
