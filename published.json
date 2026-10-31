@@ -401,5 +401,87 @@
     ],
     "blogger_id": "5537834802620862837",
     "blogger_url": "https://realtoraiguide.blogspot.com/"
+  },
+  {
+    "date": "2026-10-31",
+    "niche": "ChatGPT and AI prompts for real estate listings, emails and social media",
+    "title": "ChatGPT Prompts for Real Estate Instagram Reels Scripts",
+    "file": "2026-10-31-chatgpt-prompts-real-estate-reels-scripts.md",
+    "ai_image": null,
+    "fact_check": [
+      {
+        "name": "ChatGPT",
+        "url": "https://chatgpt.com",
+        "status": 403,
+        "verified": true
+      },
+      {
+        "name": "Instagram",
+        "url": "https://www.instagram.com",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "TikTok",
+        "url": "https://www.tiktok.com",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "YouTube Shorts",
+        "url": "https://www.youtube.com/shorts",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "Facebook Reels",
+        "url": "https://www.facebook.com",
+        "status": 400,
+        "verified": false
+      }
+    ],
+    "blogger_id": "2885974110552132026",
+    "blogger_url": "https://realtoraiguide.blogspot.com/"
+  },
+  {
+    "date": "2026-10-31",
+    "niche": "AI tools for real estate agents (productivity and marketing tools only, no financial or legal advice)",
+    "title": "4 Best AI Headshot Generators for Real Estate Agents",
+    "file": "2026-10-31-best-ai-headshot-generator-real-estate-agents.md",
+    "ai_image": null,
+    "fact_check": [
+      {
+        "name": "Aragon AI",
+        "url": "https://www.aragon.ai",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "HeadshotPro",
+        "url": "https://www.headshotpro.com",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "The Multiverse AI",
+        "url": "https://www.themultiverseai.com",
+        "status": 0,
+        "verified": false
+      },
+      {
+        "name": "ProPhotos AI",
+        "url": "https://prophotos.ai",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "Try It On AI",
+        "url": "https://www.tryitonai.com",
+        "status": 200,
+        "verified": true
+      }
+    ],
+    "blogger_id": "127717253241498402",
+    "blogger_url": "https://realtoraiguide.blogspot.com/"
   }
 ]
