@@ -483,5 +483,75 @@
     ],
     "blogger_id": "127717253241498402",
     "blogger_url": "https://realtoraiguide.blogspot.com/"
+  },
+  {
+    "date": "2026-11-01",
+    "niche": "AI tools for real estate agents (productivity and marketing tools only, no financial or legal advice)",
+    "title": "4 Best AI Tools for Real Estate Listing Presentations",
+    "file": "2026-11-01-best-ai-tools-real-estate-listing-presentations.md",
+    "ai_image": null,
+    "fact_check": [
+      {
+        "name": "Gamma",
+        "url": "https://gamma.app",
+        "status": 403,
+        "verified": true
+      },
+      {
+        "name": "Tome",
+        "url": "https://tome.app",
+        "status": 404,
+        "verified": false
+      },
+      {
+        "name": "Canva Magic Design",
+        "url": "https://www.canva.com",
+        "status": 403,
+        "verified": true
+      },
+      {
+        "name": "Beautiful.ai",
+        "url": "https://www.beautiful.ai",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "Pitch",
+        "url": "https://pitch.com",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "Google Maps",
+        "url": "https://www.google.com/maps",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "RealtorAIGuide",
+        "url": "https://realtoraiguide.com",
+        "status": 200,
+        "verified": true
+      }
+    ],
+    "blogger_id": "7169780870745727543",
+    "blogger_url": "https://realtoraiguide.blogspot.com/"
+  },
+  {
+    "date": "2026-11-01",
+    "niche": "ChatGPT and AI prompts for real estate listings, emails and social media",
+    "title": "ChatGPT Prompts for Open House Follow-Up Emails",
+    "file": "2026-11-01-chatgpt-prompts-open-house-follow-up-emails.md",
+    "ai_image": null,
+    "fact_check": [
+      {
+        "name": "ChatGPT",
+        "url": "https://chatgpt.com",
+        "status": 403,
+        "verified": true
+      }
+    ],
+    "blogger_id": "3906653438041817180",
+    "blogger_url": "https://realtoraiguide.blogspot.com/"
   }
 ]
