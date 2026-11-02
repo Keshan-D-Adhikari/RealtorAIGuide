@@ -553,5 +553,75 @@
     ],
     "blogger_id": "3906653438041817180",
     "blogger_url": "https://realtoraiguide.blogspot.com/"
+  },
+  {
+    "date": "2026-11-02",
+    "niche": "ChatGPT and AI prompts for real estate listings, emails and social media",
+    "title": "ChatGPT Prompts for First-Time Homebuyer Email Sequences",
+    "file": "2026-11-02-chatgpt-prompts-first-time-homebuyer-emails.md",
+    "ai_image": null,
+    "fact_check": [
+      {
+        "name": "ChatGPT",
+        "url": "https://chatgpt.com",
+        "status": 403,
+        "verified": true
+      },
+      {
+        "name": "Zoom",
+        "url": "https://zoom.us",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "RealtorAIGuide",
+        "url": "https://realtoraiguide.com",
+        "status": 200,
+        "verified": true
+      }
+    ],
+    "blogger_id": "3226034669290559827",
+    "blogger_url": "https://realtoraiguide.blogspot.com/"
+  },
+  {
+    "date": "2026-11-02",
+    "niche": "AI virtual staging and real estate photo editing tools",
+    "title": "4 Best AI Virtual Renovation Tools for Listing Photos",
+    "file": "2026-11-02-best-ai-virtual-renovation-tools.md",
+    "ai_image": null,
+    "fact_check": [
+      {
+        "name": "REImagine Home",
+        "url": "https://www.reimaginehome.ai",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "BoxBrownie",
+        "url": "https://www.boxbrownie.com",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "Renovate AI",
+        "url": "https://www.renovateai.app",
+        "status": 0,
+        "verified": false
+      },
+      {
+        "name": "VirtualStagingAI",
+        "url": "https://www.virtualstagingai.app",
+        "status": 200,
+        "verified": true
+      },
+      {
+        "name": "Interior AI",
+        "url": "https://interiorai.com",
+        "status": 200,
+        "verified": true
+      }
+    ],
+    "blogger_id": "3123650022214677038",
+    "blogger_url": "https://realtoraiguide.blogspot.com/"
   }
 ]
